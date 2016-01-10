@@ -1,18 +1,18 @@
 
 var app = angular.module('myApp', []); 
 app.controller('todoCtrl', function($scope) {
-    $scope.todoList = [{todoText:'Clean House', done:false}];
+    $scope.todoList = [{todoText:'Purchase a Laptop', done:false}];
 
-    $scope.todoAdd = function() {
+    $scope.todoAddItem = function() {
         $scope.todoList.push({todoText:$scope.todoInput, done:false});
         $scope.todoInput = "";
     };
 
-    $scope.remove = function() {
+    $scope.removeItem = function() {
         var oldList = $scope.todoList;
         $scope.todoList = [];
-        angular.forEach(oldList, function(x) {
-            if (!x.done) $scope.todoList.push(x);
+        angular.forEach(oldList, function(todoItem) {
+            if (!todoItem.done) $scope.todoList.push(todoItem);
         });
     };
 });

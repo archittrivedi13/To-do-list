@@ -8,19 +8,19 @@
 	<body ng-app="myApp" ng-controller="todoCtrl">
 		<h2>Todo List</h2>
 
-		<form ng-submit="todoAdd()">
+		<form ng-submit="todoAddItem()">
 			<input type="text" ng-model="todoInput" size="70" placeholder="Add New">
-			<input type="submit" value="Add New">
+			<input type="submit" value="Add New Item">
 		</form>
 
 		<br/>
 
-		<div ng-repeat="x in todoList">
-			<input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+		<div ng-repeat="todoItem in todoList">
+			<input type="checkbox" ng-model="todoItem.done"> <span ng-bind="todoItem.todoText"></span>
 		</div>
 
 		<p>
-			<button ng-click="remove()">Remove marked</button>
+			<button ng-click="removeItem()">Remove marked Item</button>
 		</p>
 
 	</body>
